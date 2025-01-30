@@ -1,25 +1,32 @@
-  <div class="left-sidebar">
-            <h2>Category</h2>
-            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
- 
-                 <?php 
-                      $mydb->setQuery("SELECT * FROM `tblcategory`");
-                      $cur = $mydb->loadResultList();
-                     foreach ($cur as $result) {
-                      echo ' <div class="categ panel panel-default">
-                            <div class="panel-heading">
-                              <h4 class="panel-title"><a href="index.php?q=product&category='.$result->CATEGORIES.'" >'.$result->CATEGORIES.'</a></h4>
-                            </div>
-                          </div>';
-                      }
-                  ?>
-              
-            </div><!--/category-products-->
-          <!--
-            <div class="shipping text-center">shipping
-              <img src="images/home/shipping.jpg" alt="" />
+    <div class="col-md-3">
+            <div class="sidebar-nav-fixed affix">
+                <div class="well">
+                    <ul class="nav ">
+                        <li class="nav-header"></li>
+                        <!-- <li class="active"><a href="#">Link</a> -->
+                        <li class="dropdown-toggle">
+                          <?php if($_SESSION['TYPE']=='Administrator'){ 
+                            ?>
+                            <a href="<?php echo web_root; ?>admin/modules/setting/index.php"><span class="glyphicon glyphicon-cog"></span>Settings</a>
+                         <?php
+                          }?>         
+                        </li>
+                        <li><a href="#">Link</a>
+                        </li>
+                        <li><a href="#">Link</a>
+                        </li>
+                        <li class="nav-header">Sidebar</li>
+                        <li><a href="#">Link</a>
+                        </li>
+                        <li><a href="#">Link</a>
+                        </li>
+                        <li><a href="#">Link</a>
+                        </li>
+                         
+                       
+                    </ul>
+                </div>
+                <!--/.well -->
             </div>
-            -->
-          </div>
-
- 
+            <!--/sidebar-nav-fixed -->
+        </div>
